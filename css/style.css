@@ -683,13 +683,16 @@ body {
     width: 100%;
     border-collapse: collapse;
     margin-top: 1rem;
+    display: block;
+    overflow-x: auto;
 }
 
 .problem-table th,
 .problem-table td {
     padding: 1rem;
-    text-align: justify;
+    text-align: left;
     border-bottom: 1px solid var(--card-border);
+    word-wrap: break-word;
 }
 
 .problem-table th {
@@ -955,6 +958,10 @@ body {
 
 /* Responsive Design */
 @media (max-width: 968px) {
+    .nav-container {
+        justify-content: flex-start;
+    }
+
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -1010,6 +1017,23 @@ body {
 
     .section-title {
         font-size: 2rem;
+    }
+
+    .problem-table {
+        font-size: 0.9rem;
+    }
+
+    .problem-table th,
+    .problem-table td {
+        padding: 0.75rem 0.5rem;
+        display: block;
+        width: 100%;
+    }
+
+    .problem-table th {
+        position: sticky;
+        top: 0;
+        z-index: 1;
     }
 }
 
