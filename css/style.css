@@ -406,6 +406,10 @@ body {
     animation: fadeInUp 1.2s ease;
 }
 
+.tagline-highlight {
+    color: var(--accent-cyan);
+}
+
 .hero-date {
     font-size: 1.5rem;
     font-weight: 600;
