@@ -536,7 +536,7 @@ function createProblemStatementsAccordion() {
                         <td>${problem.challenges}</td>
                     </tr>
                     <tr>
-                        <td><strong>Expected Solutions</strong></td>
+                        <td><strong>Expected Solution</strong></td>
                         <td>${problem.solutions}</td>
                     </tr>
                 </table>
@@ -572,7 +572,7 @@ function createProblemStatementsAccordion() {
                                     <td>${problem.challenges}</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Expected Solutions</strong></td>
+                                    <td><strong>Expected Solution</strong></td>
                                     <td>${problem.solutions}</td>
                                 </tr>
                             </table>
