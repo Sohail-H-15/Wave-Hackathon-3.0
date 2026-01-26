@@ -277,85 +277,212 @@ const problemStatements = {
     ]
 };
 
-// Organizing Committee Data
+// Hackathon Committee Data
 const committeeData = [
     {
-        title: "Registration Committee",
+        title: "Organizing Committee",
         content: `
             <div class="committee-grid">
                 <div class="committee-member">
-                    <h4>Prof.Lakshmi P.Kollur</h4>
-                    <p>📞 9739782170</p>
+                    <h4>Dr. Mahabaleshwar S. K.</h4>
                 </div>
                 <div class="committee-member">
-                    <h4>Prof.Anita Kori</h4>
-                    <p>📞 7892194877</p>
+                    <h4>Dr. R. L. Naik</h4>
                 </div>
                 <div class="committee-member">
-                    <h4>Prof.Laxmi M</h4>
-                    <p>📞 7975364930</p>
-                </div>
-                <div class="committee-member">
-                    <h4>Prof.Jayasheela G</h4>
-                    <p>📞 7204980831</p>
-                </div>
-                <div class="committee-member">
-                    <h4>Dhruv Kittur</h4>
-                    <p>📞 9663427121</p>
-                </div>
-                <div class="committee-member">
-                    <h4>Pramodini Goudar</h4>
-                    <p>📞 8217887297</p>
-                </div>
-                <div class="committee-member">
-                    <h4>Rahul K Savla</h4>
-                    <p>📞 7338044295</p>
-                </div>
-                <div class="committee-member">
-                    <h4>Anagha B</h4>
-                    <p>📞 9019610253</p>
-                </div>
-                <div class="committee-member">
-                    <h4>Nitin N</h4>
-                    <p>📞 8496018802</p>
-                </div>
-                <div class="committee-member">
-                    <h4>Housabai Bhosale</h4>
-                    <p>📞 7892328074</p>
-                </div>
-                <div class="committee-member">
-                    <h4>Sohail Hangaragi</h4>
-                    <p>📞 9148665890</p>
-                </div>
-                <div class="committee-member">
-                    <h4>Tubatasneem W</h4>
-                    <p>📞 9019805382</p>
+                    <h4>Dr. B. M. Reshmi</h4>
                 </div>
             </div>
         `
     },
     {
-        title: "Faculty Coordinators",
-        content: `
-            <p>Details will be updated soon.</p>
-        `
-    },
-    {
         title: "Technical Committee",
         content: `
-            <p>To be updated</p>
+            <div class="committee-grid">
+                <div class="committee-member">
+                    <h4>Dr. Mahabaleshwar S. K.</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Dr. R. L. Naik</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Dr. B. M. Reshmi</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Dr. Vishwanath Kagawade</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Smt. Jayasheela D. Kallaganiger</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Smt. Lakshmi P. Kolur</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Smt. Anita Kori</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Miss. Laxmi Muttappanavar</h4>
+                </div>
+            </div>
         `
     },
     {
-        title: "Accommodation Committee",
+        title: "Finance Committee",
         content: `
-            <p>To be updated</p>
+            <div class="committee-grid">
+                <div class="committee-member">
+                    <h4>Dr. S. G. Saraganachari</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Mr. Shivanand Buguti</h4>
+                </div>
+            </div>
         `
     },
     {
-        title: "Student Co-ordinators",
+        title: "Marketing & Public Relations Committee",
         content: `
-            <p>To be updated</p>
+            <div class="committee-grid">
+                <div class="committee-member">
+                    <h4>Sri. V. P. Girisagar</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Sri. R. S. Allurkar</h4>
+                </div>
+            </div>
+        `
+    },
+    {
+        title: "Logistics Committee",
+        content: `
+            <div class="committee-grid">
+                <div class="committee-member">
+                    <h4>Dr. Basangouda Ronad</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Dr. S. Y. Goudappanavar</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Sri. Mahantesh L. Chikkadesai</h4>
+                </div>
+            </div>
+        `
+    },
+    {
+        title: "Registration & Participant Management Committee",
+        content: `
+            <div class="committee-grid">
+                <div class="committee-member">
+                    <h4>Dr. L. B. Bhajantri</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Dr. Chetan Bulla</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Sri. S. N. Kugali</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Sri. G. B. Shettar</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Sri. S. S. Hiremath</h4>
+                </div>
+            </div>
+        `
+    },
+    {
+        title: "Hospitality & Food Committee",
+        content: `
+            <div class="committee-grid">
+                <div class="committee-member">
+                    <h4>Dr. S. K. Patil</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Sri. S. S. Bopardekar</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Dr. C. L. Chayalakshmi</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Dr. Manjula A. Sutagundar</h4>
+                </div>
+            </div>
+        `
+    },
+    {
+        title: "Accommodation & Travel Committee",
+        content: `
+            <div class="committee-grid">
+                <div class="committee-member">
+                    <h4>Dr. P. L. Timmanagoudar</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Sri. B. R. Endigeri</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Dr. S. M. Jigajinni</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Dr. M. C. Goudar</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Mrs. Sudha K. S.</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Mrs. Karuna B. Kurbet</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Mrs. Sunita Tambakad</h4>
+                </div>
+            </div>
+        `
+    },
+    {
+        title: "Judging & Evaluation Committee",
+        content: `
+            <div class="committee-grid">
+                <div class="committee-member">
+                    <h4>Dr. Veerappa B. Pagi</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Dr. V. S. Jigajinni</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Dr. Rajani S. Pujar</h4>
+                </div>
+            </div>
+        `
+    },
+    {
+        title: "Stage & Program Flow Committee",
+        content: `
+            <div class="committee-grid">
+                <div class="committee-member">
+                    <h4>Dr. Mamata J. Sataraddi</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Dr. K. B. Balavalad</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Dr. Sharanappa P. H</h4>
+                </div>
+            </div>
+        `
+    },
+    {
+        title: "Media & Documentation Committee",
+        content: `
+            <div class="committee-grid">
+                <div class="committee-member">
+                    <h4>Dr. S. B. Kumbalavati</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Dr. A. C. Katageri</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Dr. K. Y. Bendigeri</h4>
+                </div>
+            </div>
         `
     }
 ];
