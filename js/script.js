@@ -20,7 +20,7 @@ const formatData = [
         title: "How It Works",
         content: `
             <ul>
-                <li>Teams may select a problem statement from the provided domains or opt for Open Innovation</li>
+                <li>Teams may select a problem statement from the provided themes or opt for Open Innovation</li>
                 <li>Development & prototyping phase</li>
                 <li>Final presentation to judges</li>
             </ul>
@@ -820,13 +820,43 @@ function initNavigation() {
         }
     });
 
-    // Navbar background on scroll
+    // Navbar background on scroll + hide on scroll up, show on scroll down
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+    const navbar = document.getElementById('navbar');
+
     window.addEventListener('scroll', () => {
-        const navbar = document.getElementById('navbar');
-        if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(10, 22, 40, 0.98)';
-        } else {
-            navbar.style.background = 'rgba(10, 22, 40, 0.95)';
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const currentScrollY = window.scrollY;
+
+                // Update background opacity
+                if (currentScrollY > 50) {
+                    navbar.style.background = 'rgba(10, 22, 40, 0.98)';
+                } else {
+                    navbar.style.background = 'rgba(10, 22, 40, 0.95)';
+                }
+
+                // Hide/show based on scroll direction
+                // Only hide if scrolled past hero section (100px) and not at the very top
+                if (currentScrollY > 100) {
+                    if (currentScrollY > lastScrollY) {
+                        // Scrolling down - hide navbar
+                        navbar.style.transform = 'translateY(-100%)';
+                    } else {
+                        // Scrolling up - show navbar
+                        navbar.style.transform = 'translateY(0)';
+                    }
+                } else {
+                    // At top - always show navbar
+                    navbar.style.transform = 'translateY(0)';
+                }
+
+                lastScrollY = currentScrollY;
+                ticking = false;
+            });
+
+            ticking = true;
         }
     });
 }

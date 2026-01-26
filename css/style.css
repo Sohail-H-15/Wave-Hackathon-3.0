@@ -68,7 +68,7 @@ body {
     top: 0;
     width: 100%;
     z-index: 1000;
-    transition: var(--transition);
+    transition: var(--transition), transform 0.3s ease;
     background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
     box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
     border-bottom: none;
@@ -1178,6 +1178,57 @@ body {
 
     .first-prize {
         transform: scale(1);
+    }
+}
+
+/* Mobile Navigation & Text Fixes */
+@media (max-width: 768px) {
+
+    /* Reduce navbar size */
+    .nav-container {
+        padding: 0.5rem 1rem;
+    }
+
+    .nav-brand-text {
+        font-size: 1.4rem;
+    }
+
+    .menu-toggle {
+        left: 1rem;
+        padding: 0.3rem;
+    }
+
+    .menu-toggle span {
+        width: 20px;
+        height: 2px;
+        margin: 2px 0;
+    }
+
+    .nav-menu {
+        top: 55px;
+        max-height: calc(100vh - 55px);
+        padding: 1.5rem 0;
+    }
+
+    .nav-menu li {
+        padding: 0.4rem 1.5rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+
+    /* Fix large gaps in justified text on mobile */
+    .about-content p,
+    .problem-table td,
+    .content-card p,
+    .accordion-body p {
+        word-break: break-all;
+        hyphens: auto;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        word-spacing: normal;
+        text-align-last: left;
     }
 }
 
