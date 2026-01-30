@@ -60,24 +60,23 @@ const formatData = [
             <p style="margin-bottom: 0.5rem;"><strong>5 hours into the hackathon</strong></p>
             <p style="margin-bottom: 0.5rem;">Teams will present their problem understanding and proposed solution approach.</p>
             <p style="margin-bottom: 0.5rem;">Evaluation criteria:</p>
-            <ul style="margin-left: 1.5rem; margin-bottom: 0.75rem;">
+            <ul style="margin-left: 1.5rem; margin-bottom: 1.25rem;">
                 <li>Problem identification and relevance</li>
                 <li>Clarity of idea and solution</li>
                 <li>Innovation and originality</li>
             </ul>
-            <p style="margin-bottom: 1.25rem; font-style: italic;">Mentors will interact with teams during this phase to provide guidance and help refine ideas.</p>
             
-            <h5 style="color: #6366f1; margin-top: 1.25rem; margin-bottom: 0.5rem;">Phase 2: Design & Implementation Review</h5>
+            <h5 style="color: #6366f1; margin-top: 1.25rem; margin-bottom: 0.5rem;">Phase 2: Design, Implementation & Mentoring</h5>
             <p style="margin-bottom: 0.5rem;"><strong>12 hours into the hackathon</strong></p>
             <p style="margin-bottom: 0.5rem;">Teams will showcase their system design and implementation progress.</p>
             <p style="margin-bottom: 0.5rem;">Evaluation criteria:</p>
-            <ul style="margin-left: 1.5rem; margin-bottom: 1.25rem;">
+            <ul style="margin-left: 1.5rem; margin-bottom: 0.75rem;">
                 <li>System design and architecture</li>
                 <li>Technology and tool selection</li>
                 <li>Implementation progress</li>
-                <li>Effective use of mentoring and feedback</li>
                 <li>Team collaboration</li>
             </ul>
+            <p style="margin-bottom: 1.25rem; font-style: italic;">Mentors will interact with teams during this phase to provide guidance and help refine ideas.</p>
             
             <h5 style="color: #6366f1; margin-top: 1.25rem; margin-bottom: 0.5rem;">Phase 3: Final Implementation & Prototype Evaluation</h5>
             <p style="margin-bottom: 0.5rem;"><strong>24 hours into the hackathon</strong></p>
