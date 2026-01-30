@@ -30,9 +30,8 @@ const formatData = [
         title: "Submission Guidelines",
         content: `
             <ul>
-                <li>Working prototype/demo required</li>
                 <li>Clear explanation of idea and impact</li>
-                <li>Demonstration of technical implementation</li>
+                <li>Working prototype/demo required</li>
             </ul>
         `
     },
@@ -55,24 +54,42 @@ const formatData = [
 
         <h4 style="color: #6366f1; margin-top: 1.5rem; margin-bottom: 0.75rem;">Evaluation Process:</h4>
         <div style="margin-left: 1rem; margin-bottom: 1.5rem;">
-            <p style="margin-bottom: 0.75rem;"><strong>Initial Review (5 hours into the hackathon):</strong><br>
-            Participating teams will present their ideas and explain their problem statements to a panel of judges. They will also provide an overview of their progress up to that point.</p>
+            <p style="margin-bottom: 1.5rem;">The hackathon will be evaluated in three phases at regular intervals throughout the 24-hour event. All participating teams will progress through each evaluation phase.</p>
             
-            <p style="margin-bottom: 0.75rem;"><strong>Mid-way Review (12 hours into the hackathon):</strong><br>
-            The selected teams from the initial review will present their updated progress to the panel of judges. Evaluation will be based on the quality of their solutions, the advancement they've made, and their implementation strategies.</p>
+            <h5 style="color: #6366f1; margin-top: 1.25rem; margin-bottom: 0.5rem;">Phase 1: Idea Understanding & Problem Analysis</h5>
+            <p style="margin-bottom: 0.5rem;"><strong>5 hours into the hackathon</strong></p>
+            <p style="margin-bottom: 0.5rem;">Teams will present their problem understanding and proposed solution approach.</p>
+            <p style="margin-bottom: 0.5rem;">Evaluation criteria:</p>
+            <ul style="margin-left: 1.5rem; margin-bottom: 0.75rem;">
+                <li>Problem identification and relevance</li>
+                <li>Clarity of idea and solution</li>
+                <li>Innovation and originality</li>
+            </ul>
+            <p style="margin-bottom: 1.25rem; font-style: italic;">Mentors will interact with teams during this phase to provide guidance and help refine ideas.</p>
             
-            <p style="margin-bottom: 0.75rem;"><strong>Final Review (24 hours into the hackathon):</strong><br>
-            The remaining teams will present their fully developed solutions to the panel of judges. Evaluation will encompass creativity, technical excellence, feasibility, and potential impact of their solutions.</p>
+            <h5 style="color: #6366f1; margin-top: 1.25rem; margin-bottom: 0.5rem;">Phase 2: Design & Implementation Review</h5>
+            <p style="margin-bottom: 0.5rem;"><strong>12 hours into the hackathon</strong></p>
+            <p style="margin-bottom: 0.5rem;">Teams will showcase their system design and implementation progress.</p>
+            <p style="margin-bottom: 0.5rem;">Evaluation criteria:</p>
+            <ul style="margin-left: 1.5rem; margin-bottom: 1.25rem;">
+                <li>System design and architecture</li>
+                <li>Technology and tool selection</li>
+                <li>Implementation progress</li>
+                <li>Effective use of mentoring and feedback</li>
+                <li>Team collaboration</li>
+            </ul>
+            
+            <h5 style="color: #6366f1; margin-top: 1.25rem; margin-bottom: 0.5rem;">Phase 3: Final Implementation & Prototype Evaluation</h5>
+            <p style="margin-bottom: 0.5rem;"><strong>24 hours into the hackathon</strong></p>
+            <p style="margin-bottom: 0.5rem;">Teams will present their final working prototype.</p>
+            <p style="margin-bottom: 0.5rem;">Evaluation criteria:</p>
+            <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                <li>Implementation of suggestions received earlier</li>
+                <li>Prototype functionality and refinement</li>
+                <li>Presentation and demonstration quality</li>
+            </ul>
         </div>
 
-        <h4 style="color: #6366f1; margin-top: 1.5rem; margin-bottom: 0.75rem;">Evaluation Criteria:</h4>
-        <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
-            <li><strong>Innovation Quotient:</strong> Assess the extent of creativity, originality, and ingenuity evident in the proposal. This covers the novelty of the concept, the degree of innovation embedded, and the fresh perspective on the underlying problem.</li>
-            <li><strong>Technical Proficiency:</strong> Gauge the technical prowess and expertise displayed by the team members. Consider the intricacy of the solution design, the depth of technical understanding, and the precision of the solution's implementation.</li>
-            <li><strong>Practical Viability:</strong> Examine the practical feasibility and workability of the solution. Evaluate its potential for real-world application, scalability within different contexts, and the extent to which it addresses the problem's core issues.</li>
-            <li><strong>Societal Impact:</strong> Analyze the potential positive effects and transformative outcomes the solution could bring. Consider its ability to address tangible real-life challenges, pave the way for meaningful change, and provide opportunities for future expansion.</li>
-            <li><strong>Expressive Delivery:</strong> Assess the quality of the presentation, focusing on how effectively the team communicates their idea. This involves evaluating the clarity of their communication, their capacity to articulate complex concepts, and the overall coherence of the solution's narrative.</li>
-        </ul>
         <p style="margin-top: 1rem; padding: 0.75rem; background: rgba(99, 102, 241, 0.1); border-left: 4px solid #6366f1; border-radius: 4px;"><strong>Note:</strong> Jury decision is final.</p>
 
         <h4 style="color: #6366f1; margin-top: 1.5rem; margin-bottom: 0.75rem;">Prize Distribution:</h4>
@@ -323,6 +340,12 @@ const committeeData = [
                 <div class="committee-member">
                     <h4>Miss. Laxmi Muttappanavar</h4>
                 </div>
+                <div class="committee-member">
+                    <h4>Sri. Brahmanand Reddy</h4>
+                </div>
+                <div class="committee-member">
+                    <h4>Sri. Ashok. S. Patil</h4>
+                </div>
             </div>
         `
     },
@@ -531,9 +554,9 @@ const announcementsData = [
             <p><strong>To be updated on hackathon day.</strong></p>
             <p>We will publish the shortlisted/top teams here once the selection is completed.</p>
             <ul>
-                <li>Team 1: TBD</li>
-                <li>Team 2: TBD</li>
-                <li>Team 3: TBD</li>
+                <li>Team 1: * (to be declared)</li>
+                <li>Team 2: * (to be declared)</li>
+                <li>Team 3: * (to be declared)</li>
             </ul>
         `
     },
@@ -542,9 +565,9 @@ const announcementsData = [
         content: `
             <p><strong>To be updated on hackathon day.</strong></p>
             <ul>
-                <li><strong>1st Prize</strong>: TBD</li>
-                <li><strong>2nd Prize</strong>: TBD</li>
-                <li><strong>3rd Prize</strong>: TBD</li>
+                <li><strong>1st Prize</strong>: * (to be declared)</li>
+                <li><strong>2nd Prize</strong>: * (to be declared)</li>
+                <li><strong>3rd Prize</strong>: * (to be declared)</li>
             </ul>
         `
     },
@@ -553,8 +576,8 @@ const announcementsData = [
         content: `
             <p>Important updates, instructions, and links will be posted here during the event.</p>
             <ul>
-                <li>Update 1: TBD</li>
-                <li>Update 2: TBD</li>
+                <li>Update 1: * (to be declared)</li>
+                <li>Update 2: * (to be declared)</li>
             </ul>
         `
     }
@@ -869,8 +892,8 @@ function initRegistrationCountdown() {
     const timerEl = document.getElementById('deadlineTimer');
     if (!timerEl) return;
 
-    // Deadline: 10 Feb 2026, 11:59:59 PM (local time)
-    const deadline = new Date('2026-02-10T23:59:59');
+    // Deadline: 20 Feb 2026, 11:59:59 PM (local time)
+    const deadline = new Date('2026-02-20T23:59:59');
 
     function pad2(n) {
         return String(n).padStart(2, '0');
