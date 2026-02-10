@@ -118,7 +118,7 @@ body {
     flex-direction: column;
     background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
     width: 100%;
-    max-width: 320px;
+    max-width: 250px;
     text-align: left;
     transition: left 0.3s ease;
     box-shadow: var(--shadow-lg);
@@ -135,7 +135,7 @@ body {
 }
 
 .nav-menu li {
-    padding: 0.5rem 2rem;
+    padding: 0.25rem 1.5rem;
 }
 
 .nav-link {
@@ -166,10 +166,12 @@ body {
 
 .register-btn {
     background: linear-gradient(135deg, var(--accent-cyan), var(--accent-teal));
-    padding: 0.5rem 1.2rem;
-    border-radius: 25px;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
     font-weight: 600;
     color: #ffffff;
+    display: inline-block;
+    text-align: center;
 }
 
 .register-btn::after {

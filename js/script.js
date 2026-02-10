@@ -891,8 +891,8 @@ function initRegistrationCountdown() {
     const timerEl = document.getElementById('deadlineTimer');
     if (!timerEl) return;
 
-    // Deadline: 20 Feb 2026, 11:59:59 PM (local time)
-    const deadline = new Date('2026-02-20T23:59:59');
+    // Deadline: 28 Feb 2026, 11:59:59 PM (local time)
+    const deadline = new Date('2026-02-28T23:59:59');
 
     function pad2(n) {
         return String(n).padStart(2, '0');
