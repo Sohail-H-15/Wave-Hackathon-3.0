@@ -513,7 +513,7 @@ const committeeData = [
 const faqsData = [
     {
         question: "What is the registration fee?",
-        answer: "₹250 per participant"
+        answer: "₹250 per member of the team."
     },
     {
         question: "Is this hackathon online or offline?",
