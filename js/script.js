@@ -646,6 +646,11 @@ function createProblemStatementsAccordion() {
         const domainItem = document.createElement('div');
         domainItem.className = 'accordion-item domain-item';
 
+        // Add special class for Open Innovation
+        if (domain === "Open Innovation") {
+            domainItem.classList.add('open-innovation-domain');
+        }
+
         domainItem.innerHTML = `
             <div class="accordion-header domain-header" data-domain="${domain}">
                 <span>${domain}</span>
@@ -776,38 +781,44 @@ function createProblemStatementsAccordion() {
             if (!isActive) {
                 currentItem.classList.add('active');
                 const content = currentItem.querySelector('.domain-content');
+                const domainName = header.getAttribute('data-domain');
 
-                // Calculate height based only on problem headers (collapsed state)
-                // First get the accordion body element
-                const accordionBody = content.querySelector('.accordion-body');
-                if (accordionBody) {
-                    // Get all problem items and ENSURE they are collapsed
-                    const problemItems = accordionBody.querySelectorAll('.problem-item');
-                    let totalHeight = 0;
-
-                    // Explicitly ensure all problem items are collapsed
-                    problemItems.forEach(item => {
-                        // Remove active class - CSS will handle hiding content
-                        item.classList.remove('active');
-
-                        // Calculate header height
-                        const header = item.querySelector('.problem-header');
-                        if (header) {
-                            // Use computed height for more accurate measurement
-                            const headerStyles = window.getComputedStyle(header);
-                            const headerHeight = parseFloat(headerStyles.height) +
-                                parseFloat(headerStyles.marginTop) +
-                                parseFloat(headerStyles.marginBottom);
-                            totalHeight += headerHeight;
-                        }
-                    });
-
-                    // Add padding and some extra space
-                    totalHeight += 50; // Account for padding
-                    content.style.maxHeight = totalHeight + 'px';
+                // Special handling for Open Innovation - no maxHeight restriction
+                if (domainName === "Open Innovation") {
+                    content.style.maxHeight = '3000px';
                 } else {
-                    // Fallback for Open Innovation or other special cases
-                    content.style.maxHeight = content.scrollHeight + 'px';
+                    // Calculate height based only on problem headers (collapsed state)
+                    // First get the accordion body element
+                    const accordionBody = content.querySelector('.accordion-body');
+                    if (accordionBody) {
+                        // Get all problem items and ENSURE they are collapsed
+                        const problemItems = accordionBody.querySelectorAll('.problem-item');
+                        let totalHeight = 0;
+
+                        // Explicitly ensure all problem items are collapsed
+                        problemItems.forEach(item => {
+                            // Remove active class - CSS will handle hiding content
+                            item.classList.remove('active');
+
+                            // Calculate header height
+                            const header = item.querySelector('.problem-header');
+                            if (header) {
+                                // Use computed height for more accurate measurement
+                                const headerStyles = window.getComputedStyle(header);
+                                const headerHeight = parseFloat(headerStyles.height) +
+                                    parseFloat(headerStyles.marginTop) +
+                                    parseFloat(headerStyles.marginBottom);
+                                totalHeight += headerHeight;
+                            }
+                        });
+
+                        // Add padding and some extra space
+                        totalHeight += 50; // Account for padding
+                        content.style.maxHeight = totalHeight + 'px';
+                    } else {
+                        // Fallback for other special cases
+                        content.style.maxHeight = '9999px';
+                    }
                 }
             }
         });
