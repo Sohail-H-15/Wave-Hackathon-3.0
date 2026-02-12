@@ -823,20 +823,24 @@ function initNavigation() {
         });
     });
 
-    // Smooth scroll
+    // Smooth scroll - only for navigation links
     navLinks.forEach(link => {
         if (link.getAttribute('href').startsWith('#')) {
             link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
+                // Only prevent default and smooth scroll for navigation links
+                // Check if the clicked element is actually a navigation link
+                if (link.classList.contains('nav-link')) {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
 
-                if (targetSection) {
-                    const offsetTop = targetSection.offsetTop - 80;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
+                    if (targetSection) {
+                        const offsetTop = targetSection.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
                 }
             });
         }
