@@ -877,6 +877,38 @@ body {
     transition: max-height 0.4s ease;
 }
 
+/* Limit problem statement content height and add scroll - only when active */
+.problem-item.active .problem-content {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+/* Ensure problem content is hidden when not active */
+.problem-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+/* Custom scrollbar for problem statements */
+.problem-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.problem-content::-webkit-scrollbar-track {
+    background: rgba(99, 102, 241, 0.05);
+    border-radius: 4px;
+}
+
+.problem-content::-webkit-scrollbar-thumb {
+    background: rgba(99, 102, 241, 0.3);
+    border-radius: 4px;
+}
+
+.problem-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(99, 102, 241, 0.5);
+}
+
 .accordion-body {
     padding: 0 1.5rem 1.5rem;
 }

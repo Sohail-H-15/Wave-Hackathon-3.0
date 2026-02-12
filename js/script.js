@@ -741,6 +741,23 @@ function createProblemStatementsAccordion() {
             const currentItem = header.parentElement;
             const isActive = currentItem.classList.contains('active');
 
+            // Lock the current scroll position
+            const lockedScroll = window.scrollY;
+            let isLocked = true;
+
+            // Continuously maintain scroll position during transition
+            const scrollLockInterval = setInterval(() => {
+                if (isLocked && window.scrollY !== lockedScroll) {
+                    window.scrollTo(0, lockedScroll);
+                }
+            }, 16); // ~60fps
+
+            // Release lock after transition completes
+            setTimeout(() => {
+                isLocked = false;
+                clearInterval(scrollLockInterval);
+            }, 450);
+
             // Close all domain items
             container.querySelectorAll('.domain-item').forEach(item => {
                 item.classList.remove('active');
@@ -759,7 +776,39 @@ function createProblemStatementsAccordion() {
             if (!isActive) {
                 currentItem.classList.add('active');
                 const content = currentItem.querySelector('.domain-content');
-                content.style.maxHeight = content.scrollHeight + 'px';
+
+                // Calculate height based only on problem headers (collapsed state)
+                // First get the accordion body element
+                const accordionBody = content.querySelector('.accordion-body');
+                if (accordionBody) {
+                    // Get all problem items and ENSURE they are collapsed
+                    const problemItems = accordionBody.querySelectorAll('.problem-item');
+                    let totalHeight = 0;
+
+                    // Explicitly ensure all problem items are collapsed
+                    problemItems.forEach(item => {
+                        // Remove active class - CSS will handle hiding content
+                        item.classList.remove('active');
+
+                        // Calculate header height
+                        const header = item.querySelector('.problem-header');
+                        if (header) {
+                            // Use computed height for more accurate measurement
+                            const headerStyles = window.getComputedStyle(header);
+                            const headerHeight = parseFloat(headerStyles.height) +
+                                parseFloat(headerStyles.marginTop) +
+                                parseFloat(headerStyles.marginBottom);
+                            totalHeight += headerHeight;
+                        }
+                    });
+
+                    // Add padding and some extra space
+                    totalHeight += 50; // Account for padding
+                    content.style.maxHeight = totalHeight + 'px';
+                } else {
+                    // Fallback for Open Innovation or other special cases
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
             }
         });
     });
@@ -775,26 +824,57 @@ function createProblemStatementsAccordion() {
             const domainItem = currentItem.closest('.domain-item');
             const problemsContainer = currentItem.parentElement.parentElement;
 
-            // Close all problem items in this domain
+            // Close all problem items in this domain (remove active class)
             problemsContainer.querySelectorAll('.problem-item').forEach(item => {
                 item.classList.remove('active');
-                const content = item.querySelector('.problem-content');
-                content.style.maxHeight = null;
             });
 
-            // Open clicked problem if it wasn't active
+            // Open clicked problem if it wasn't active (toggle behavior)
             if (!isActive) {
+                // Add active class - CSS will handle the 500px max-height and scroll
                 currentItem.classList.add('active');
-                const content = currentItem.querySelector('.problem-content');
-                content.style.maxHeight = content.scrollHeight + 'px';
 
-                // Update parent domain height
+                // Update parent domain height to accommodate the expanded problem
                 const domainContent = domainItem.querySelector('.domain-content');
-                domainContent.style.maxHeight = domainContent.scrollHeight + content.scrollHeight + 'px';
+                const problemsContainer = currentItem.closest('.problems-accordion');
+
+                // Calculate total height: all problem headers + 500px for expanded problem
+                let totalHeight = 50; // Base padding
+                const allProblemItems = problemsContainer.querySelectorAll('.problem-item');
+                allProblemItems.forEach(item => {
+                    const header = item.querySelector('.problem-header');
+                    if (header) {
+                        const headerStyles = window.getComputedStyle(header);
+                        const headerHeight = parseFloat(headerStyles.height) +
+                            parseFloat(headerStyles.marginTop) +
+                            parseFloat(headerStyles.marginBottom);
+                        totalHeight += headerHeight;
+                    }
+                });
+                // Add 500px for the currently expanded problem
+                totalHeight += 500;
+
+                domainContent.style.maxHeight = totalHeight + 'px';
             } else {
-                // Update parent domain height when closing
+                // Clicking on already open item closes it - recalculate to collapsed state
                 const domainContent = domainItem.querySelector('.domain-content');
-                domainContent.style.maxHeight = domainContent.scrollHeight + 'px';
+                const problemsContainer = currentItem.closest('.problems-accordion');
+
+                // Calculate height based only on problem headers (all collapsed)
+                let totalHeight = 50;
+                const allProblemItems = problemsContainer.querySelectorAll('.problem-item');
+                allProblemItems.forEach(item => {
+                    const header = item.querySelector('.problem-header');
+                    if (header) {
+                        const headerStyles = window.getComputedStyle(header);
+                        const headerHeight = parseFloat(headerStyles.height) +
+                            parseFloat(headerStyles.marginTop) +
+                            parseFloat(headerStyles.marginBottom);
+                        totalHeight += headerHeight;
+                    }
+                });
+
+                domainContent.style.maxHeight = totalHeight + 'px';
             }
         });
     });
