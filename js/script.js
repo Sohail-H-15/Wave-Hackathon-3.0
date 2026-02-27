@@ -916,7 +916,8 @@ function initNavigation() {
 
     // Smooth scroll - only for navigation links
     navLinks.forEach(link => {
-        if (link.getAttribute('href').startsWith('#')) {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
             link.addEventListener('click', (e) => {
                 // Only prevent default and smooth scroll for navigation links
                 // Check if the clicked element is actually a navigation link
@@ -986,8 +987,8 @@ function initRegistrationCountdown() {
     const timerEl = document.getElementById('deadlineTimer');
     if (!timerEl) return;
 
-    // Deadline: 28 Feb 2026, 11:59:59 PM (local time)
-    const deadline = new Date('2026-02-28T23:59:59');
+    // Deadline: 4 March 2026, 12:00:00 AM (midnight, local time)
+    const deadline = new Date('2026-03-04T00:00:00');
 
     function pad2(n) {
         return String(n).padStart(2, '0');
