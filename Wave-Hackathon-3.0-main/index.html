@@ -42,8 +42,9 @@
                 <li><a href="#faqs" class="nav-link">FAQs</a></li>
                 <li><a href="#location" class="nav-link">Location</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li><a href="https://forms.gle/CUALHcQujwaeyQFSA" target="_blank" class="nav-link register-btn">Register
-                        Now</a></li>
+                <li>
+                    <span class="nav-link register-btn register-frozen" aria-disabled="true">Registration Closed</span>
+                </li>
             </ul>
         </div>
     </nav>
@@ -71,9 +72,16 @@
                     class="tagline-highlight">Riding the Wave of Innovation</span>
             </p>
             <p class="hero-date">13<sup>th</sup> & 14<sup>th</sup> March 2026</p>
-            <a href="https://forms.gle/CUALHcQujwaeyQFSA" target="_blank" class="cta-btn">Register Now</a>
+            <div class="reg-notice" role="status" aria-live="polite">
+                <span class="reg-notice-icon" aria-hidden="true">⛔</span>
+                <div>
+                    <strong>Registration Closed.</strong><br>
+                    Registration has been closed as the limit of teams has been reached. Sorry, try next time.
+                    Thank you for registering.
+                </div>
+            </div>
             <div class="hero-deadline" aria-live="polite">
-                <p class="deadline-label">Registration deadline: <strong>28 Feb. 2026</strong></p>
+                <p class="deadline-label">Be Ready to ride the Wave — <strong>13th March 2026, 8:00 AM</strong></p>
                 <div class="deadline-timer" id="deadlineTimer" role="timer">Loading countdown...</div>
             </div>
             <div class="hero-highlights">

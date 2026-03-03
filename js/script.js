@@ -980,15 +980,16 @@ function initNavigation() {
 }
 
 // ==========================================
-// Registration Deadline Countdown (Hero)
+// Event Countdown (Hero)
 // ==========================================
 
 function initRegistrationCountdown() {
     const timerEl = document.getElementById('deadlineTimer');
     if (!timerEl) return;
 
-    // Deadline: 4 March 2026, 12:00:00 AM (midnight, local time)
-    const deadline = new Date('2026-03-04T00:00:00');
+    // Event start: 13 March 2026, 08:00:00 AM (local time)
+    // Note: using numeric Date() to avoid browser parsing differences for ISO strings without timezone.
+    const deadline = new Date(2026, 2, 13, 8, 0, 0);
 
     function pad2(n) {
         return String(n).padStart(2, '0');
@@ -1005,7 +1006,7 @@ function initRegistrationCountdown() {
         }
 
         if (diffMs <= 0) {
-            timerEl.textContent = 'Registration closed';
+            timerEl.textContent = 'The Wave has begun';
             timerEl.classList.add('expired');
             return;
         }
