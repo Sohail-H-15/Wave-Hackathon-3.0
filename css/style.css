@@ -1814,3 +1814,480 @@ body {
     box-shadow: none !important;
     filter: grayscale(0.4);
 }
+
+/* ============================================
+   LIVE EVENT DAY STYLES
+   ============================================ */
+
+/* ── LIVE Badge ── */
+.live-badge-container {
+    margin-bottom: 0.5rem;
+    animation: fadeInDown 0.5s ease;
+}
+
+.live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    letter-spacing: 0.15em;
+    box-shadow:
+        0 0 20px rgba(239, 68, 68, 0.5),
+        0 0 60px rgba(239, 68, 68, 0.2);
+    animation: livePulse 2s ease-in-out infinite;
+}
+
+.live-dot {
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    animation: liveDotBlink 1s ease-in-out infinite;
+}
+
+@keyframes livePulse {
+    0%, 100% {
+        box-shadow:
+            0 0 20px rgba(239, 68, 68, 0.5),
+            0 0 60px rgba(239, 68, 68, 0.2);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow:
+            0 0 30px rgba(239, 68, 68, 0.7),
+            0 0 80px rgba(239, 68, 68, 0.35);
+        transform: scale(1.04);
+    }
+}
+
+@keyframes liveDotBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* ── Live Status Banner (replaces reg-notice) ── */
+.live-status-banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.12), rgba(6, 182, 212, 0.12));
+    border: 2px solid rgba(34, 197, 94, 0.4);
+    border-radius: 14px;
+    padding: 1rem 1.75rem;
+    margin-bottom: 0.75rem;
+    color: #14532d;
+    font-size: 0.98rem;
+    line-height: 1.55;
+    text-align: left;
+    animation: fadeInUp 1.4s ease;
+    box-shadow: 0 4px 18px rgba(34, 197, 94, 0.12);
+}
+
+.live-status-icon {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+}
+
+/* ── Highlight Chip Live ── */
+.highlight-chip-live {
+    background: rgba(239, 68, 68, 0.1) !important;
+    border-color: rgba(239, 68, 68, 0.35) !important;
+    animation: livePulseChip 2.5s ease-in-out infinite;
+}
+
+.chip-live {
+    color: #ef4444 !important;
+    font-weight: 900 !important;
+}
+
+@keyframes livePulseChip {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.15);
+    }
+    50% {
+        box-shadow: 0 0 20px 4px rgba(239, 68, 68, 0.2);
+    }
+}
+
+/* ── CTA Button (Event Day) ── */
+.cta-btn-event {
+    margin-top: 0.75rem;
+    background: linear-gradient(135deg, #22c55e, #06b6d4) !important;
+    box-shadow: 0 8px 32px rgba(34, 197, 94, 0.25);
+}
+
+.cta-btn-event:hover {
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.5) !important;
+}
+
+/* ============================================
+   EVENT DAY SCHEDULE SECTION
+   ============================================ */
+
+.event-day {
+    background: linear-gradient(180deg, rgba(99, 102, 241, 0.04), rgba(6, 182, 212, 0.06));
+}
+
+.event-day-banner {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.event-day-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(6, 182, 212, 0.1));
+    border: 2px solid rgba(99, 102, 241, 0.2);
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    animation: fadeInDown 0.8s ease;
+}
+
+.event-day-calendar {
+    font-size: 1.5rem;
+}
+
+/* Schedule Grid */
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.schedule-card {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.schedule-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--primary-purple), var(--accent-cyan));
+    border-radius: 4px 0 0 4px;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.schedule-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-cyan);
+}
+
+.schedule-card:hover::before {
+    opacity: 1;
+}
+
+.schedule-card-highlight {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.06), rgba(6, 182, 212, 0.06));
+    border-color: rgba(99, 102, 241, 0.2);
+}
+
+.schedule-time {
+    flex-shrink: 0;
+    background: linear-gradient(135deg, var(--primary-purple), var(--accent-cyan));
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.5rem 0.85rem;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 90px;
+    letter-spacing: 0.03em;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.schedule-info h3 {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: 0.35rem;
+    font-weight: 700;
+}
+
+.schedule-info p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Event Day Notice */
+.event-day-notice {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.05));
+    border: 2px solid rgba(245, 158, 11, 0.3);
+    border-radius: 14px;
+    padding: 1.25rem 1.75rem;
+    margin-top: 0.5rem;
+}
+
+.notice-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.event-day-notice p {
+    margin: 0;
+    color: #78350f;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* ============================================
+   ADMIN PANEL SECTION
+   ============================================ */
+
+.admin-panel {
+    background: linear-gradient(180deg, rgba(6, 182, 212, 0.04), rgba(99, 102, 241, 0.06));
+}
+
+.admin-panel-card {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(99, 102, 241, 0.2);
+    border-radius: 24px;
+    padding: var(--spacing-lg) var(--spacing-md);
+    text-align: center;
+    box-shadow:
+        var(--shadow-lg),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.admin-panel-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0%,
+        rgba(99, 102, 241, 0.05) 25%,
+        transparent 50%,
+        rgba(6, 182, 212, 0.05) 75%,
+        transparent 100%
+    );
+    animation: adminCardSpin 15s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes adminCardSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.admin-panel-card:hover {
+    border-color: var(--accent-cyan);
+    box-shadow:
+        0 8px 40px rgba(99, 102, 241, 0.2),
+        0 0 60px rgba(6, 182, 212, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.admin-panel-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: spinGear 8s linear infinite;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes spinGear {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.admin-panel-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, var(--primary-purple), var(--accent-cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.75rem;
+    position: relative;
+    z-index: 1;
+}
+
+.admin-panel-card > p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Admin Features Grid */
+.admin-panel-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.admin-feature {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(99, 102, 241, 0.06);
+    border: 1px solid rgba(99, 102, 241, 0.12);
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.admin-feature:hover {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: var(--accent-cyan);
+    transform: translateY(-2px);
+}
+
+.admin-feature-icon {
+    font-size: 1.3rem;
+}
+
+/* Admin Button */
+.admin-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+    color: #fff;
+    padding: 0.85rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: var(--transition);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.admin-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -60%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: skewX(-18deg);
+}
+
+.admin-btn:hover::after {
+    left: 130%;
+    transition: left 700ms ease;
+}
+
+.admin-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(99, 102, 241, 0.45);
+}
+
+.admin-note {
+    margin-top: 1rem;
+    font-size: 0.85rem !important;
+    color: var(--text-secondary) !important;
+    opacity: 0.7;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================================
+   EVENT DAY RESPONSIVE OVERRIDES
+   ============================================ */
+
+@media (max-width: 768px) {
+    .schedule-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .schedule-card {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .schedule-time {
+        min-width: auto;
+        align-self: flex-start;
+    }
+
+    .admin-panel-features {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-panel-card {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+
+    .live-badge {
+        font-size: 0.85rem;
+        padding: 0.4rem 1.2rem;
+    }
+
+    .live-status-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .event-day-date {
+        font-size: 1rem;
+        padding: 0.6rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .schedule-info h3 {
+        font-size: 1rem;
+    }
+
+    .admin-panel-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .admin-btn {
+        padding: 0.75rem 2rem;
+        font-size: 1rem;
+    }
+}

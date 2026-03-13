@@ -28,12 +28,13 @@
             </div>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#event-day" class="nav-link">🔴 Today's Schedule</a></li>
+                <li><a href="#live-dashboard" class="nav-link">📡 Live Dashboard</a></li>
                 <li><a href="#objectives" class="nav-link">Objectives</a></li>
                 <li><a href="#about-bec" class="nav-link">About BEC</a></li>
                 <li><a href="#what-is-wave" class="nav-link">What is Wave 3.0</a></li>
                 <li><a href="#who-can-apply" class="nav-link">Who Can Apply</a></li>
                 <li><a href="#hackathon-format" class="nav-link">Hackathon Structure</a></li>
-
                 <li><a href="#problem-statements" class="nav-link">Hackathon Themes</a></li>
                 <li><a href="#timeline" class="nav-link">Timeline</a></li>
                 <li><a href="#announcements" class="nav-link">Announcements</a></li>
@@ -42,9 +43,6 @@
                 <li><a href="#faqs" class="nav-link">FAQs</a></li>
                 <li><a href="#location" class="nav-link">Location</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li>
-                    <span class="nav-link register-btn register-frozen" aria-disabled="true">Registration Closed</span>
-                </li>
             </ul>
         </div>
     </nav>
@@ -66,22 +64,24 @@
             <span class="code-float f10">++</span>
         </div>
         <div class="hero-content">
+            <div class="live-badge-container">
+                <span class="live-badge"><span class="live-dot"></span> LIVE NOW</span>
+            </div>
             <span class="badge">A National Level 24-Hour Hackathon</span>
             <h1 class="hero-title">WAVE Hackathon 3.0</h1>
             <p class="hero-tagline">Code Smart. Collaborate Strong. Conquer the Future.<br><span
                     class="tagline-highlight">Riding the Wave of Innovation</span>
             </p>
             <p class="hero-date">13<sup>th</sup> & 14<sup>th</sup> March 2026</p>
-            <div class="reg-notice" role="status" aria-live="polite">
-                <span class="reg-notice-icon" aria-hidden="true">⛔</span>
+            <div class="live-status-banner" role="status" aria-live="polite">
+                <span class="live-status-icon" aria-hidden="true">🚀</span>
                 <div>
-                    <strong>Registration Closed.</strong><br>
-                    Registration has been closed as the limit of teams has been reached. Sorry, try next time.
-                    Thank you for registering.
+                    <strong>The Wave Has Begun!</strong><br>
+                    WAVE 3.0 is happening NOW at Gouri Shankar Kalyana Mantapa, BEC Bagalkot.
                 </div>
             </div>
             <div class="hero-deadline" aria-live="polite">
-                <p class="deadline-label">Be Ready to ride the Wave — <strong>13th March 2026, 8:00 AM</strong></p>
+                <p class="deadline-label">Hackathon Timer</p>
                 <div class="deadline-timer" id="deadlineTimer" role="timer">Loading countdown...</div>
             </div>
             <div class="hero-highlights">
@@ -91,9 +91,87 @@
                 </div>
                 <div class="highlight-chip"><span class="chip-label">Duration</span><span class="chip-value">24
                         Hours</span></div>
+                <div class="highlight-chip highlight-chip-live"><span class="chip-label">Status</span><span
+                        class="chip-value chip-live">🔴 LIVE</span></div>
             </div>
+            <a href="#event-day" class="cta-btn cta-btn-event">📋 View Today's Schedule</a>
         </div>
         <div class="hero-bg-animation"></div>
+    </section>
+
+    <!-- Event Day Info -->
+    <section id="event-day" class="section event-day">
+        <div class="container">
+            <h2 class="section-title">📋 Today's Schedule & Instructions</h2>
+            <div class="event-day-banner">
+                <div class="event-day-date">
+                    <span class="event-day-calendar">📅</span>
+                    <span>13th March 2026 — <strong>Event Day</strong></span>
+                </div>
+            </div>
+            <div class="schedule-grid">
+                <div class="schedule-card schedule-card-highlight">
+                    <div class="schedule-time">8:00 AM</div>
+                    <div class="schedule-info">
+                        <h3>📝 Registration Opens</h3>
+                        <p>Registration begins at <strong>Gouri Shankar Kalyana Mantapa</strong>. All participants must register on arrival.</p>
+                    </div>
+                </div>
+                <div class="schedule-card">
+                    <div class="schedule-time">8:30 – 9:30 AM</div>
+                    <div class="schedule-info">
+                        <h3>🍳 Breakfast</h3>
+                        <p>Breakfast will be served at Gouri Shankar Kalyana Mantapa for all participants and volunteers.</p>
+                    </div>
+                </div>
+                <div class="schedule-card schedule-card-highlight">
+                    <div class="schedule-time">10:30 AM</div>
+                    <div class="schedule-info">
+                        <h3>🎤 Inaugural Function</h3>
+                        <p>All participants and volunteers must assemble at the <strong>BEC Auditorium</strong> for the Inaugural Function.</p>
+                    </div>
+                </div>
+                <div class="schedule-card">
+                    <div class="schedule-time">After Inaugural</div>
+                    <div class="schedule-info">
+                        <h3>✂️ Ribbon-Cutting Ceremony</h3>
+                        <p>The Ribbon-Cutting Ceremony will be held at Gouri Shankar Kalyana Mantapa by our Honourable Chairman <strong>Dr. Veeranna C. Charantimath</strong>.</p>
+                    </div>
+                </div>
+                <div class="schedule-card schedule-card-highlight">
+                    <div class="schedule-time">Post Ceremony</div>
+                    <div class="schedule-info">
+                        <h3>💻 Hackathon Commences!</h3>
+                        <p>The 24-hour hackathon will commence <strong>immediately after the ribbon-cutting ceremony</strong>. Get ready to code!</p>
+                    </div>
+                </div>
+                <div class="schedule-card">
+                    <div class="schedule-time">Throughout Day</div>
+                    <div class="schedule-info">
+                        <h3>🍽️ Meals Arrangement</h3>
+                        <p>Breakfast, lunch, snacks, and dinner are arranged for all participants and volunteers at <strong>Gouri Shankar Kalyana Mantapa</strong>.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="event-day-notice">
+                <span class="notice-icon">⚠️</span>
+                <p><strong>Important:</strong> Kindly be punctual and cooperate for the smooth conduction of WAVE 3.0 Hackathon.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Dashboard -->
+    <section id="live-dashboard" class="section admin-panel">
+        <div class="container">
+            <h2 class="section-title">📡 Live Dashboard</h2>
+            <div class="admin-panel-card">
+                <div class="admin-panel-icon">📊</div>
+                <h3>WAVE 3.0 Live Progress</h3>
+                <p>Track the hackathon in real-time — view team progress, live scores, announcements, and more. Open to all participants, mentors, and visitors.</p>
+                <a href="#" class="admin-btn" id="adminPanelBtn" target="_blank" rel="noopener noreferrer">🚀 Open Live Dashboard</a>
+                <p class="admin-note">Dashboard link will be updated once the hackathon begins.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Objectives -->

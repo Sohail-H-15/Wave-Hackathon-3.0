@@ -985,11 +985,15 @@ function initNavigation() {
 
 function initRegistrationCountdown() {
     const timerEl = document.getElementById('deadlineTimer');
+    const labelEl = document.querySelector('.deadline-label');
     if (!timerEl) return;
 
-    // Event start: 13 March 2026, 08:00:00 AM (local time)
-    // Note: using numeric Date() to avoid browser parsing differences for ISO strings without timezone.
-    const deadline = new Date(2026, 2, 13, 8, 0, 0);
+    // Event registration opens: 13 March 2026, 08:00 AM
+    const registrationStart = new Date(2026, 2, 13, 8, 0, 0);
+    // Hackathon starts (after ceremony): 13 March 2026, 12:00 PM (estimated)
+    const hackathonStart = new Date(2026, 2, 13, 12, 0, 0);
+    // Hackathon ends: 14 March 2026, 12:00 PM
+    const hackathonEnd = new Date(2026, 2, 14, 12, 0, 0);
 
     function pad2(n) {
         return String(n).padStart(2, '0');
@@ -997,28 +1001,55 @@ function initRegistrationCountdown() {
 
     function render() {
         const now = new Date();
-        const diffMs = deadline.getTime() - now.getTime();
 
-        if (Number.isNaN(deadline.getTime())) {
-            timerEl.textContent = 'Invalid deadline date';
-            timerEl.classList.add('expired');
+        // Before registration opens
+        if (now < registrationStart) {
+            const diffMs = registrationStart.getTime() - now.getTime();
+            const totalSeconds = Math.floor(diffMs / 1000);
+            const hours = Math.floor(totalSeconds / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+
+            if (labelEl) labelEl.textContent = 'Registration opens in';
+            timerEl.textContent = `${hours}H ${pad2(minutes)}M ${pad2(seconds)}S`;
+            timerEl.classList.remove('expired');
             return;
         }
 
-        if (diffMs <= 0) {
-            timerEl.textContent = 'The Wave has begun';
-            timerEl.classList.add('expired');
+        // Before hackathon starts (ceremony time)
+        if (now < hackathonStart) {
+            const diffMs = hackathonStart.getTime() - now.getTime();
+            const totalSeconds = Math.floor(diffMs / 1000);
+            const hours = Math.floor(totalSeconds / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+
+            if (labelEl) labelEl.innerHTML = '⚡ Hackathon starts in';
+            timerEl.textContent = `${hours}H ${pad2(minutes)}M ${pad2(seconds)}S`;
+            timerEl.classList.remove('expired');
             return;
         }
 
-        const totalSeconds = Math.floor(diffMs / 1000);
-        const days = Math.floor(totalSeconds / (24 * 3600));
-        const hours = Math.floor((totalSeconds % (24 * 3600)) / 3600);
-        const minutes = Math.floor((totalSeconds % 3600) / 60);
-        const seconds = totalSeconds % 60;
+        // Hackathon is LIVE
+        if (now < hackathonEnd) {
+            const elapsedMs = now.getTime() - hackathonStart.getTime();
+            const remainMs = hackathonEnd.getTime() - now.getTime();
+            const remainSeconds = Math.floor(remainMs / 1000);
+            const rHours = Math.floor(remainSeconds / 3600);
+            const rMinutes = Math.floor((remainSeconds % 3600) / 60);
+            const rSeconds = remainSeconds % 60;
 
-        timerEl.classList.remove('expired');
-        timerEl.textContent = `${days}D ${pad2(hours)}H ${pad2(minutes)}M ${pad2(seconds)}S`;
+            if (labelEl) labelEl.innerHTML = '🔥 HACKING IN PROGRESS — Time Remaining';
+            timerEl.textContent = `${pad2(rHours)}H ${pad2(rMinutes)}M ${pad2(rSeconds)}S`;
+            timerEl.classList.remove('expired');
+            timerEl.style.color = '#22c55e';
+            return;
+        }
+
+        // Hackathon ended
+        if (labelEl) labelEl.textContent = 'Hackathon Completed!';
+        timerEl.textContent = '🏆 WAVE 3.0 Complete!';
+        timerEl.classList.add('expired');
     }
 
     render();
