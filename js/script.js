@@ -545,42 +545,6 @@ const faqsData = [
     }
 ];
 
-// Announcements Data
-const announcementsData = [
-    {
-        title: "Top Teams Selected",
-        content: `
-            <p><strong>To be updated on hackathon day.</strong></p>
-            <p>We will publish the shortlisted/top teams here once the selection is completed.</p>
-            <ul>
-                <li>Team 1: * (to be declared)</li>
-                <li>Team 2: * (to be declared)</li>
-                <li>Team 3: * (to be declared)</li>
-            </ul>
-        `
-    },
-    {
-        title: "Winners",
-        content: `
-            <p><strong>To be updated on hackathon day.</strong></p>
-            <ul>
-                <li><strong>1st Prize</strong>: * (to be declared)</li>
-                <li><strong>2nd Prize</strong>: * (to be declared)</li>
-                <li><strong>3rd Prize</strong>: * (to be declared)</li>
-            </ul>
-        `
-    },
-    {
-        title: "Live Updates",
-        content: `
-            <p>Important updates, instructions, and links will be posted here during the event.</p>
-            <ul>
-                <li>Update 1: * (to be declared)</li>
-                <li>Update 2: * (to be declared)</li>
-            </ul>
-        `
-    }
-];
 
 // ==========================================
 // Accordion Functionality
@@ -1457,11 +1421,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const faqsAccordion = document.getElementById('faqsAccordion');
     createAccordion(faqsAccordion, faqsData, 'simple');
 
-    // Create Announcements accordion
-    const announcementsAccordion = document.getElementById('announcementsAccordion');
-    if (announcementsAccordion) {
-        createAccordion(announcementsAccordion, announcementsData, 'simple');
-    }
 
     // Registration deadline countdown (Home section)
     initRegistrationCountdown();
